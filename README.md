@@ -1,5 +1,5 @@
 #seuss.js
-#####a plugin that will transform a website into something of good old dr. seuss' dreams...and youe nightmares
+#####a plugin that will transform a website into something of good old dr. seuss' dreams...but your nightmares
 
 ##demo
 http://seuss.johnvaghi.com
