@@ -1,29 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Starter Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
- 
- 	<link rel="stylesheet" href="">
-
-  </head>
-  <body>
-  	<div class="wrapper">
-  	<h1>1test</h1>
- 		<h2>2test</h2>
- 		<h3>3test</h3>
- 		<h4>4test</h4>
- 		<p>5test <a>5test</a></p>
-    <a>5test</a>
-  	</div>
- 	<div class="unSeuss">unseuss</div>
- 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
- 	<script src="seuss.js"></script>
- 	<script>
- 		$('.wrapper').seuss();
- 	</script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>seuss.js | a plugin that will transform a website into something of good old dr. seuss' dreams...and youe nightmares</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <style>
+    body { font-family:Arial,Helvetica; text-align: center; }
+    h1 { font-size:50px; }
+    .btn { display: inline-block; padding: 10px; background-color: #ccc; text-align: center; cursor:pointer; margin-top: 20px; }
+      .btn:hover { background-color:rgb(10, 179, 175); color:#fff; }
+      .off { cursor:default; opacity:0.5; }
+      .off:hover { background-color: #ccc; color:#000;  }
+    span { display: block; font-size:10px; }
+    
+  </style>
+</head>
+<body>
+ <div class="wrapper">
+   <h1>Seuss.js*</h1>
+   <h2>a lightweight (for now) js plugin that will transform a website into something of dr. seuss' dreams**</h2>
+   <h3>it's probably important that we incorporate some kind of seuss-eqs rhyming gag into this example page</h3>
+   <h4>well, the plugin will eventually do that. for now, it will not and somehow the world will be a sadder place.</h4>
+   <h5><a href="https://github.com/vagh27/seuss.js" target="_blank">check it out so far on github</a></h5> 
+   <span>* legend has it, this exact js plugin was the good doctor's dying wish</span>
+   <span>** but your nightmares***</span>
+   <span>*** unless you're a client, then it will look totally rad</span>
+ </div>
+ <div class="runSeuss btn">runseuss</div>
+ <div class="unSeuss btn off">unseuss</div>
+ <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+ <script src="seuss.js"></script>
+ <script>
+  $(function () {
+    $('body').on('click','.runSeuss:not(.off)', function(){
+      $('.runSeuss, .unSeuss').toggleClass('off');
+      $('.wrapper').seuss();
+    });
+    $('body').on('click','.unSeuss:not(.off)', function(){
+      $('.runSeuss, .unSeuss').toggleClass('off');
+    });
+  });
+ </script>
+</body>
 </html>

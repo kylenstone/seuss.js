@@ -11,8 +11,9 @@
   var pluginName = 'seuss',
       document = window.document,
       defaults = {
-        color: true,
-        auto: false,
+        //color: true,
+        //auto: false,
+        selectors : ['p','h1','h2','h3','h4','a','div','span'],
         unSeuss: '.unSeuss'
       };
 
@@ -32,8 +33,9 @@
 	
 	var masterHTML = this.element.innerHTML,
 		  element = this.element,
-		  css,
-      selectors = ['p','h1','h2','h3','h4','a'],
+      selectors = this.options.selectors,
+		  css;
+      
       selectorsLength = selectors.length;
   	
   	function findStyles(cssBuild){
@@ -45,7 +47,6 @@
 	  	return cssBuild;
   	}
   	
-
     for(var t = 0; t < selectorsLength; t++) { 
     	$(this.element).find(selectors[t]).each(function(index) {
       		findStyles(css);
@@ -58,12 +59,12 @@
   };
 
 
-  // prevents against multiple instantiations
+  // prevents against multiple instantiations...which is silly if we want to re-SEUSS!!!
   $.fn[pluginName] = function ( options ) {
     return this.each(function () {
-      if (!$.data(this, 'plugin_' + pluginName)) {
+      //if (!$.data(this, 'plugin_' + pluginName)) {
         $.data(this, 'plugin_' + pluginName, new Plugin( this, options ));
-      }
+      //}
     });
   }
 
