@@ -6,19 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="stylesheet" type="text/css" href="seuss.css">
   <style>
-    body { font-family:Arial,Helvetica; text-align: center; }
-    h1 { font-size:50px; }
-    .btn { display: inline-block; padding: 10px; background-color: #ccc; text-align: center; cursor:pointer; margin-top: 20px; }
-      .btn:hover { background-color:rgb(10, 179, 175); color:#fff; }
-      .off { cursor:default; opacity:0.5; }
-      .off:hover { background-color: #ccc; color:#000;  }
-    span { display: block; font-size:10px; }
+
     
   </style>
 </head>
 <body>
- <div class="wrapper">
+<div class="wrapper">
    <h1>Seuss.js*</h1>
    <h2>a lightweight (for now) js plugin that will transform a website into something of dr. seuss' dreams**</h2>
    <h3>it's probably important that we incorporate some kind of seuss-esque rhyming gag into this example page</h3>
@@ -27,21 +22,27 @@
    <span>* legend has it, this exact js plugin was the good doctor's dying wish</span>
    <span>** but your nightmares***</span>
    <span>*** unless you're a client, then it will look totally rad</span>
+
  </div>
  <div class="runSeuss btn">runseuss</div>
  <div class="unSeuss btn off">unseuss</div>
+
  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
  <script src="seuss.js"></script>
  <script>
   $(function () {
+      var snd = new Audio("saxophone.mp3"); // buffers automatically when created    
     $('body').on('click','.runSeuss:not(.off)', function(){
       $('.runSeuss, .unSeuss').toggleClass('off');
-      $('.wrapper').seuss();
+      $('.wrapper').seuss(); 
+      snd.play();
     });
     $('body').on('click','.unSeuss:not(.off)', function(){
       $('.runSeuss, .unSeuss').toggleClass('off');
+      snd.pause();
     });
-  });
+  });  
  </script>
+
 </body>
 </html>

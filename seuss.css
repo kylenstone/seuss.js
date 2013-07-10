@@ -1,0 +1,12 @@
+    body { font-family:Arial,Helvetica; text-align: center; }
+    h1 { font-size:50px; }
+    .btn { display: inline-block; padding: 10px; background-color: #ccc; text-align: center; cursor:pointer; margin-top: 20px; }
+      .btn:hover { background-color:rgb(10, 179, 175); color:#fff; }
+      .off { cursor:default; opacity:0.5; }
+      .off:hover { background-color: #ccc; color:#000;  }
+    span { display: block; font-size:10px; }
+
+.hover
+{
+	opacity: .5
+}
