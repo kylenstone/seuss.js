@@ -51,7 +51,7 @@
         // 'opacity' : '0.5'
         }
       $('h1').animate({'opacity': '0.5'});
-      $('h2, h3, h4').hover(function() {
+      $('h2, h3, h4, a').hover(function() {
     $(this).toggle('hover');
 });
 	  	return cssBuild;
